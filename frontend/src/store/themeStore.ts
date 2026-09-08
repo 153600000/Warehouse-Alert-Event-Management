@@ -9,7 +9,7 @@ interface ThemeState {
 }
 
 const getInitialTheme = (): Theme => {
-  const saved = localStorage.getItem('nexusflow_theme') as Theme | null;
+  const saved = localStorage.getItem('warehouse_theme') as Theme | null;
   if (saved === 'light' || saved === 'dark') {
     document.documentElement.setAttribute('data-theme', saved);
     return saved;
@@ -26,14 +26,14 @@ export const useThemeStore = create<ThemeState>((set) => ({
   toggleTheme: () => {
     set((state) => {
       const nextTheme = state.theme === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('nexusflow_theme', nextTheme);
+      localStorage.setItem('warehouse_theme', nextTheme);
       document.documentElement.setAttribute('data-theme', nextTheme);
       return { theme: nextTheme };
     });
   },
 
   setTheme: (theme: Theme) => {
-    localStorage.setItem('nexusflow_theme', theme);
+    localStorage.setItem('warehouse_theme', theme);
     document.documentElement.setAttribute('data-theme', theme);
     set({ theme });
   },

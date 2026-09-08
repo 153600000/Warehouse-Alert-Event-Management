@@ -25,8 +25,8 @@ interface AuthState {
 
 export const useAuthStore = create<AuthState>((set, get) => ({
   user: null,
-  token: localStorage.getItem('nexusflow_auth_token'),
-  isAuthenticated: !!localStorage.getItem('nexusflow_auth_token'),
+  token: localStorage.getItem('warehouse_auth_token'),
+  isAuthenticated: !!localStorage.getItem('warehouse_auth_token'),
   isLoading: false,
   error: null,
 
@@ -45,7 +45,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
         throw new Error(data.error || 'Authentication failed. Invalid credentials.');
       }
 
-      localStorage.setItem('nexusflow_auth_token', data.token);
+      localStorage.setItem('warehouse_auth_token', data.token);
       set({
         user: data.user,
         token: data.token,
@@ -74,7 +74,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     } catch (e) {
       console.warn('Logout network call skipped/errored:', e);
     } finally {
-      localStorage.removeItem('nexusflow_auth_token');
+      localStorage.removeItem('warehouse_auth_token');
       set({
         user: null,
         token: null,
@@ -85,7 +85,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   },
 
   validateSession: async () => {
-    const token = localStorage.getItem('nexusflow_auth_token');
+    const token = localStorage.getItem('warehouse_auth_token');
     if (!token) {
       set({ isAuthenticated: false, user: null, token: null });
       return false;
@@ -108,7 +108,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       });
       return true;
     } catch (err) {
-      localStorage.removeItem('nexusflow_auth_token');
+      localStorage.removeItem('warehouse_auth_token');
       set({
         user: null,
         token: null,

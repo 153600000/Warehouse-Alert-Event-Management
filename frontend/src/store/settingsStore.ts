@@ -30,7 +30,7 @@ const DEFAULT_THRESHOLDS: AlertThresholds = {
 
 const savedSettings = () => {
   try {
-    const raw = localStorage.getItem('nexusflow_settings');
+    const raw = localStorage.getItem('warehouse_settings');
     if (raw) return JSON.parse(raw);
   } catch (e) {
     // fallback
@@ -50,7 +50,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
   setStreamingInterval: (ms: number) => {
     set((state) => {
       const updated = { ...state, streamingIntervalMs: ms };
-      localStorage.setItem('nexusflow_settings', JSON.stringify(updated));
+      localStorage.setItem('warehouse_settings', JSON.stringify(updated));
       return { streamingIntervalMs: ms };
     });
   },
@@ -58,7 +58,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
   setPollingInterval: (ms: number) => {
     set((state) => {
       const updated = { ...state, pollingIntervalMs: ms };
-      localStorage.setItem('nexusflow_settings', JSON.stringify(updated));
+      localStorage.setItem('warehouse_settings', JSON.stringify(updated));
       return { pollingIntervalMs: ms };
     });
   },
@@ -67,7 +67,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
     set((state) => {
       const newThresholds = { ...state.thresholds, ...partial };
       const updated = { ...state, thresholds: newThresholds };
-      localStorage.setItem('nexusflow_settings', JSON.stringify(updated));
+      localStorage.setItem('warehouse_settings', JSON.stringify(updated));
       return { thresholds: newThresholds };
     });
   },
@@ -75,7 +75,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
   toggleAudio: () => {
     set((state) => {
       const updated = { ...state, audioNotifications: !state.audioNotifications };
-      localStorage.setItem('nexusflow_settings', JSON.stringify(updated));
+      localStorage.setItem('warehouse_settings', JSON.stringify(updated));
       return { audioNotifications: !state.audioNotifications };
     });
   },
@@ -83,7 +83,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
   toggleAutoRefresh: () => {
     set((state) => {
       const updated = { ...state, autoRefreshAnalytics: !state.autoRefreshAnalytics };
-      localStorage.setItem('nexusflow_settings', JSON.stringify(updated));
+      localStorage.setItem('warehouse_settings', JSON.stringify(updated));
       return { autoRefreshAnalytics: !state.autoRefreshAnalytics };
     });
   },
@@ -96,7 +96,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
       audioNotifications: false,
       autoRefreshAnalytics: true,
     };
-    localStorage.setItem('nexusflow_settings', JSON.stringify(defaults));
+    localStorage.setItem('warehouse_settings', JSON.stringify(defaults));
     set(defaults);
   },
 }));

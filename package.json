@@ -1,5 +1,5 @@
 {
-  "name": "nexusflow-real-time-warehouse-dashboard",
+  "name": "warehouse-telemetry-dashboard",
   "version": "1.0.0",
   "type": "module",
   "description": "Multi-Modal Real-Time Warehouse Telemetry Dashboard Web Application",
@@ -21,6 +21,6 @@
     "recharts",
     "framer-motion"
   ],
-  "author": "Antigravity Engineering",
+  "author": "Prajval Purad <prajvalcpurad@outlook.com>",
   "license": "MIT"
 }

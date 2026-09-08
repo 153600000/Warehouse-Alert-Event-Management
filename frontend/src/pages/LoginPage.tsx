@@ -27,7 +27,7 @@ export const LoginPage: React.FC = () => {
       addToast({
         type: 'success',
         title: 'Authentication Successful',
-        message: 'Welcome back to NexusFlow Operations Console.',
+        message: 'Welcome back to the Operations Console.',
       });
       navigate(from, { replace: true });
     } catch (err: any) {
@@ -93,7 +93,7 @@ export const LoginPage: React.FC = () => {
             Multi-Modal <span style={{ color: 'var(--color-primary)' }}>Dashboard</span>
           </h1>
           <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginTop: '0.35rem' }}>
-            Smart Warehouse Sensor Monitoring (Full-Stack Assessment)
+            Smart Warehouse Sensor Monitoring &bull; Operations Console
           </p>
         </div>
 
@@ -207,7 +207,7 @@ export const LoginPage: React.FC = () => {
         }}>
           <ShieldCheck size={20} color="var(--color-primary)" style={{ flexShrink: 0 }} />
           <div style={{ fontSize: '0.775rem', color: 'var(--color-text-secondary)', lineHeight: 1.4 }}>
-            <span style={{ fontWeight: 700, color: 'var(--color-text-primary)' }}>Demo Credentials:</span>
+            <span style={{ fontWeight: 700, color: 'var(--color-text-primary)' }}>Default Operator Access:</span>
             <br />
             Username: <code style={{ fontFamily: 'var(--font-mono)', fontWeight: 600 }}>admin</code> &nbsp;|&nbsp;
             Password: <code style={{ fontFamily: 'var(--font-mono)', fontWeight: 600 }}>password</code>

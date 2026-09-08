@@ -41,7 +41,7 @@ export const usePeriodicalFetch = <T>({
     }
 
     try {
-      const token = localStorage.getItem('nexusflow_auth_token');
+      const token = localStorage.getItem('warehouse_auth_token');
       const response = await fetch(url, {
         signal: abortControllerRef.current.signal,
         headers: {

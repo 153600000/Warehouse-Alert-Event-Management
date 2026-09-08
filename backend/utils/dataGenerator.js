@@ -1,6 +1,6 @@
 /**
  * Smart Warehouse Telemetry Data Generator
- * Domain: NexusFlow Smart Warehouse & Automated Logistics
+ * Domain: Smart Warehouse & Automated Logistics
  */
 
 let state = {

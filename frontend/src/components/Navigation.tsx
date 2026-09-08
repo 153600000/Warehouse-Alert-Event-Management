@@ -35,7 +35,7 @@ export const Navigation: React.FC<NavigationProps> = ({ wsConnected = true }) =>
     addToast({
       type: 'info',
       title: 'Signed Out',
-      message: 'You have been securely logged out of NexusFlow.',
+      message: 'You have been securely logged out.',
     });
     navigate('/login');
   };
@@ -285,7 +285,7 @@ export const Navigation: React.FC<NavigationProps> = ({ wsConnected = true }) =>
                   overflow: 'hidden',
                   textOverflow: 'ellipsis'
                 }}>
-                  {user?.email || 'admin@nexusflow.internal'}
+                  {user?.email || 'admin@warehouse.internal'}
                 </div>
               </div>
             </div>

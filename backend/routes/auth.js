@@ -16,7 +16,7 @@ const USERS = {
     id: 'USR-001',
     username: 'admin',
     name: 'Chief Logistics Officer (Admin)',
-    email: 'admin@nexusflow.internal',
+    email: 'admin@warehouse.internal',
     passwordHash: ADMIN_PASSWORD_HASH,
     role: 'Facility Lead & Operations Admin',
     department: 'Smart Fulfillment Logistics',

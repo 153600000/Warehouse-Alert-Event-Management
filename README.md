@@ -1,5 +1,5 @@
 # Multi-Modal Real-Time Dashboard Web App
-### Smart Warehouse Sensor Monitoring & Automated Telemetry System (Full-Stack Assessment)
+### Smart Warehouse Sensor Monitoring & Automated Telemetry System
 
 [![CI Pipeline](https://img.shields.io/badge/CI-GitHub_Actions-blue?style=for-the-badge&logo=githubactions&logoColor=white)](.github/workflows/ci.yml)
 [![Security Scan](https://img.shields.io/badge/Security-CodeQL_&_Audit-green?style=for-the-badge&logo=github)](.github/workflows/security.yml)
@@ -17,7 +17,7 @@
 
 - [Project Overview](#-project-overview)
 - [System Architecture](#️-system-architecture)
-- [Key Features & Assessment Compliance](#-key-features--assessment-compliance)
+- [Core Architecture & Capabilities](#-core-architecture--capabilities)
 - [Multi-Modal Interactivity Matrix](#-multi-modal-interactivity-matrix)
 - [6-Page Application Structure](#-6-page-application-structure)
 - [Enterprise Cyber-Security & OWASP Defenses](#-enterprise-cyber-security--owasp-defenses)
@@ -33,7 +33,7 @@
 
 The **Multi-Modal Real-Time Dashboard Web App** is a production-style, enterprise-grade monitoring system engineered for automated smart warehouses, fulfillment sortation facilities, and cold chain distribution hubs.
 
-Built to address the comprehensive **Full-Stack Real-Time Dashboard Assessment**, the application demonstrates:
+Designed for high-throughput operational monitoring and mission-critical telemetry, the platform provides:
 - **Sub-Second Real-Time Telemetry Streaming** via native WebSockets with interactive broadcast controls (pause, resume, and dynamic cadence).
 - **Periodic API Polling & Aggregation** delivering 10-minute derived metrics, trend indicators (↑/↓), and facility zone breakdowns.
 - **Enterprise Cyber-Security Defenses** protecting against OWASP Top 10, Brute-Force, Denial of Service (DoS), and Cross-Site WebSocket Hijacking (CSWSH).
@@ -82,17 +82,17 @@ flowchart TB
 
 ---
 
-## 📊 Key Features & Assessment Compliance
-
-| Requirement | Requirement Specification | NexusFlow Implementation |
+## 📊 Core Architecture & Capabilities
+ 
+| System Domain | Architecture Specification | Engineering Implementation |
 |---|---|---|
-| **1. Real-Time Ingestion** | Live stream in UI, ≥3 metrics fluctuating, pulsating LIVE badge, timestamp, no reload | 6 live metrics via WebSocket (`ws://localhost:3001/live`), pulsing LIVE dot badge, sub-second waveform charts, and pause/resume stream controls |
-| **2. Periodic Polling** | Polling every 5–15s, "Last updated" timestamp, derived/aggregated data | Dedicated `/analytics` polling every 10s (`GET /api/dashboard/summary`), 10-min running averages, today's package throughput, and multi-zone status |
-| **3. Theming & Design** | Consistent palette, light/dark mode, WCAG AA contrast across all pages | Defined CSS design tokens (`theme.css`), instant theme switcher, persistent in `localStorage`, consistent across all 6 pages |
-| **4. Session Management** | Login flow, route protection, token validation, safe 401 handling | Protected routes via `ProtectedRoute.tsx`, JWT authentication (`/api/auth/login`, `/validate`), auto-logout on expiration, demo credentials helper |
-| **5. Multi-Page Routing** | 5–6 distinct pages with seamless routing | 6 distinct pages: `/login`, `/dashboard`, `/analytics`, `/alerts`, `/settings`, `/profile` |
-| **6. Domain Coherence** | Coherent domain across labels, metrics, charts, APIs | Smart Warehouse Sensor Monitoring (Ambient Temp °C, Cold Chain Vault °C, Conveyor Load kg, Package Throughput pk/min, AGV Battery %) |
-| **7. Multi-Modality** | At least 2 interaction types (visual, form, controls, modals) | 6 interaction types: real-time search, column sorting, severity filters, pause/resume toggle, Framer Motion detail modals, and toast notifications |
+| **1. Real-Time Telemetry Streaming** | Continuous sub-second push updates, reactive UI state transitions, zero-refresh waveform renderers | 6 live metrics via WebSocket (`ws://localhost:3001/live`), pulsing LIVE dot badge, sub-second waveform charts, and pause/resume stream controls |
+| **2. Periodic Polling & Aggregation** | Scheduled background polling (5–15s), staleness validation, derived analytics computation | Dedicated `/analytics` polling every 10s (`GET /api/dashboard/summary`), 10-min running averages, today's package throughput, and multi-zone status |
+| **3. Design System & Theming** | WCAG AA contrast compliance, cohesive CSS token architecture, zero-flicker mode switching | Defined CSS design tokens (`theme.css`), instant theme switcher, persistent in `localStorage`, consistent across all 6 pages |
+| **4. Session Security & State** | Cryptographic session handling, route protection guards, safe token invalidation | Protected routes via `ProtectedRoute.tsx`, JWT authentication (`/api/auth/login`, `/validate`), auto-logout on expiration, default operator credentials |
+| **5. Multi-Page Application Layout** | Modular 6-route structure with dynamic code splitting | 6 distinct pages: `/login`, `/dashboard`, `/analytics`, `/alerts`, `/settings`, `/profile` |
+| **6. Industrial Domain Model** | Coherent warehouse telemetry schema across protocols | Smart Warehouse Sensor Monitoring (Ambient Temp °C, Cold Chain Vault °C, Conveyor Load kg, Package Throughput pk/min, AGV Battery %) |
+| **7. Multi-Modal Interactivity** | Multi-channel user interaction paradigms | 6 interaction types: real-time search, column sorting, severity filters, pause/resume toggle, Framer Motion detail modals, and toast notifications |
 
 ---
 
@@ -217,7 +217,7 @@ npm run frontend
 ```
 > Application opens at `http://localhost:5173`.
 
-### Demo Credentials
+### Default Operator Credentials
 - **Username**: `admin`
 - **Password**: `password`
 

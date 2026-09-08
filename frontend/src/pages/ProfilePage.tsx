@@ -96,7 +96,7 @@ export const ProfilePage: React.FC = () => {
               </span>
             </div>
             <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', marginTop: '0.2rem' }}>
-              {user?.email || 'admin@nexusflow.internal'}
+              {user?.email || 'admin@warehouse.internal'}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginTop: '0.65rem', fontSize: '0.8rem', color: 'var(--color-text-muted)' }}>
               <span style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>

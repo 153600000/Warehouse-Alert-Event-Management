@@ -62,7 +62,7 @@ app.use(
         return callback(null, true);
       }
       logSecurityEvent('CORS_BLOCKED', { blockedOrigin: origin });
-      return callback(new Error('Cross-Origin Request Blocked by NexusFlow Security Policy'));
+      return callback(new Error('Cross-Origin Request Blocked by Security Policy'));
     },
     methods: ['GET', 'POST', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
@@ -135,7 +135,7 @@ app.get('/', (req, res) => {
       <div class="card">
         <div class="status"><span class="dot"></span> Backend API & WebSocket Active</div>
         <h1>Multi-Modal Real-Time Dashboard</h1>
-        <div class="subtitle">Smart Warehouse Sensor Monitoring (Full-Stack Assessment)</div>
+        <div class="subtitle">Smart Warehouse Sensor Monitoring &bull; Enterprise Operations</div>
         <p>Production-hardened backend API & live WebSocket streaming server running on Port 3001. Launch the frontend dashboard application below:</p>
         <a href="http://localhost:5173" class="btn">Launch Dashboard (localhost:5173) &rarr;</a>
         <div class="endpoints">

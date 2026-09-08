@@ -2,11 +2,11 @@ import jwt from 'jsonwebtoken';
 import crypto from 'crypto';
 
 // Enforce minimum 256-bit key length for HMAC SHA-256
-const DEFAULT_FALLBACK_SECRET = 'nexusflow_production_hardened_secret_key_2026_987654321_alpha_bravo';
+const DEFAULT_FALLBACK_SECRET = 'warehouse_ops_telemetry_secure_key_2026_987654321_alpha_bravo';
 const SECRET = process.env.JWT_SECRET || DEFAULT_FALLBACK_SECRET;
 
-const JWT_ISSUER = 'nexusflow-telemetry-engine';
-const JWT_AUDIENCE = 'nexusflow-authenticated-operators';
+const JWT_ISSUER = 'warehouse-telemetry-engine';
+const JWT_AUDIENCE = 'warehouse-authenticated-operators';
 
 export const generateToken = (user) => {
   return jwt.sign(
