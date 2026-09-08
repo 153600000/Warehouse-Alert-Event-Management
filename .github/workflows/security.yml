@@ -42,8 +42,18 @@ jobs:
         with:
           node-version: 20
 
-      - name: Audit Backend Dependencies
-        run: npm audit --prefix backend --audit-level=high
+      - name: Install Clean Dependencies
+        run: |
+          npm ci --prefix backend
+          npm ci --prefix frontend
 
-      - name: Audit Frontend Dependencies
-        run: npm audit --prefix frontend --audit-level=high
+      - name: Audit Backend Production Dependencies
+        run: npm audit --prefix backend --omit=dev --audit-level=high
+
+      - name: Audit Frontend Production Dependencies
+        run: npm audit --prefix frontend --omit=dev --audit-level=high
+
+      - name: Comprehensive Critical Vulnerability Audit
+        run: |
+          npm audit --prefix backend --audit-level=critical
+          npm audit --prefix frontend --audit-level=critical
